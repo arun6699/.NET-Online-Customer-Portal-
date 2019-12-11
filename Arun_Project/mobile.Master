@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mobile.Master.cs" Inherits="Arun_Project.mobile" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MOBILE STORE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <asp:ContentPlaceHolder ID="headPlaceholder" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+     <div class="container">
+    <div class="navbar navbar-expand-lg navbar-light bg-light mb-4" id="navigation_bar">
+        <div class="container-fluid">
+
+            <asp:Image ID="Image1" runat="server" Height="120px" ImageUrl="~/Images/icon.jpg" Width="120px" />
+            <a class="navbar-brand brand-name" href="~/Products.aspx" runat="server">Mobile Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown" id="Product" runat="server">
+                            <a class="nav-link dropdown-toggle menu-item" data-toggle="dropdown">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><asp:HyperLink CssClass="dropdown-item" runat="server" NavigateUrl="~/Products.aspx?catID=iphone">iphone</asp:HyperLink></li>
+                                <li><asp:HyperLink CssClass="dropdown-item" runat="server" NavigateUrl="~/Products.aspx?catID=moto">moto</asp:HyperLink></li>
+                     
+                                <li><asp:HyperLink CssClass="dropdown-item" runat="server" NavigateUrl="~/Products.aspx?catID=google">Google</asp:HyperLink></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown" id="accesories" runat="server">
+                             <a class="nav-link dropdown-toggle menu-item" data-toggle="dropdown">Accesories</a>
+                            <ul class="dropdown-menu">
+                                <li><asp:HyperLink CssClass="dropdown-item" runat="server" NavigateUrl="~/accesories.aspx?catID=headphone">headphone</asp:HyperLink></li>
+                                <li><asp:HyperLink CssClass="dropdown-item" runat="server" NavigateUrl="~/Accesories.aspx?catID=speaker">speaker</asp:HyperLink></li>
+                     
+                                
+                                </ul>
+
+                                
+                                </li>
+
+                            <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="~/Order.aspx">Order</asp:HyperLink></li>
+                          <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="~/Cart.aspx">Cart</asp:HyperLink></li>
+                      
+                       
+                        <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="signup.aspx">Sign Up</asp:HyperLink></li>
+                         <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="signin.aspx">Sign In</asp:HyperLink></li>
+                         <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="AboutUs.aspx">About Us</asp:HyperLink></li>
+
+                        <li class="nav-item"><asp:HyperLink CssClass="nav-link menu-item" runat="server" NavigateUrl="ContactUs.aspx">Contact Us</asp:HyperLink></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+   
+
+
+
+
+
+         <!--
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggler"  
+                    data-toggle="collapse" data-target="#mainMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Order.aspx">Mobile Store</a>
+            </div>
+
+
+            <!-- navbar body - nav content for toggling -->
+
+        <!--
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul id="navList" runat="server" class="nav navbar-nav">
+                    <li runat="server"> 
+                        <asp:HyperLink NavigateUrl="~/Order.aspx" runat="server">Home
+                        </asp:HyperLink></li>
+                    <li runat="server" class="dropdown">
+                        <asp:HyperLink runat="server" NavigateUrl="~/Products.aspx" 
+                            CssClass="dropdown-toggle" data-toggle="dropdown">Products
+                            <span class="sr-only"></span>
+                        </asp:HyperLink>
+                        <ul class="dropdown-menu">
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx" runat="server">All
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=iphone" runat="server">IPHONE
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=google" runat="server">GOOGLE
+                                </asp:HyperLink></li>
+                            <li runat="server">
+                                <asp:HyperLink NavigateUrl="~/Products.aspx?catID=moto" runat="server">MOTOROLA
+                                </asp:HyperLink></li>
+                           
+                        </ul>
+                    </li>
+                    <li runat="server">                               
+                        <asp:HyperLink NavigateUrl="~/Cart.aspx" runat="server">Cart
+                            <span id="spanCount" runat="server" class="badge"></span>
+                        </asp:HyperLink></li>
+                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/compare.aspx" runat="server">compare
+                        </asp:HyperLink></li>
+                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/ContactUs.aspx" runat="server">Contact Us
+                        </asp:HyperLink></li>
+                    <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/AboutUs.aspx" runat="server">About Us
+                        </asp:HyperLink></li>
+                     <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/signin.aspx" runat="server">Sign In 
+                        </asp:HyperLink></li>
+
+                     <li runat="server">
+                        <asp:HyperLink NavigateUrl="~/signup.aspx" runat="server">Sign Up
+                        </asp:HyperLink></li>
+
+                     
+                </ul>
+            </div>
+        </div>
+    </nav>
+    -->
+    <div class="container">
+        <form id="form1" runat="server" class="form-horizontal">
+            
+            <header class="jumbotron"></header>
+            <main class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb">
+                        <asp:Literal ID="litBreadcrumb" runat="server"></asp:Literal>
+                    </ol>
+                    <h1><asp:Label ID="lblPageHeader" runat="server"></asp:Label></h1>
+                    <asp:ContentPlaceHolder ID="mainPlaceholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </main>
+            <footer class="text-center text-capitalize">
+                <label>copyright &copy; the mobile store.</label>
+          <asp:HyperLink CssClass="hyperlink" runat="server" NavigateUrl="mailto:themobilestore@mobile.com"> 
+                themobilestore@mobile.com</asp:HyperLink>
+            </footer>
+
+        </form>
+    </div>
+
+</body>
+</html>
